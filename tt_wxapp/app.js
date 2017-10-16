@@ -5,6 +5,7 @@ App({
       success: function (res) {
         if (res.code) {
           console.log('login code：' + res.code);
+
           // 发起网络请求
           // https://api.weixin.qq.com/sns/jscode2session 由服务器请求
           // wx.request({
