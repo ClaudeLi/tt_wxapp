@@ -1,0 +1,20 @@
+<import src="homeCell.wxml" />
+<scroll-view class="tt_home_title_bar" scroll-x="true" scroll-with-animation scroll-left="{{scrollLeft}}">
+  <block wx:for="{{titles}}" wx:for-index="index" wx:key="tt_home_titleItem">
+    <view class="tt_home_title_item {{currentIndex==index ? 'selected' : ''}}" data-index="{{index}}" bindtap="switchTab" style="width:{{item.title.length * 15+'px'}}">
+      {{item.title}}</view>
+  </block>
+</scroll-view>
+
+<swiper class="swiper" current="{{currentIndex}}" bindchange="bindChange" duration="300" style="height:{{swiperHeight}}px">
+  <block wx:for="{{allData}}" wx:for-item="dataItem" wx:key="tt_home_subView">
+    <swiper-item>
+      <scroll-view class="tt_home_scroll_item" scroll-y="true" bindscrolltolower="pullOnAddData" bindscrolltoupper="dropDownRefresh" upper-threshold="-25" lower-threshold="25" enable-back-to-top scroll-with-animation>
+        <block wx:for="{{dataItem.list}}" wx:for-item="item" wx:key="tt_home_cell">
+          <template is="homeCell" data="{{item}}" />
+        </block>
+        <view class="tt_noMore_view" hidden="{{!dataItem.list.length}}">{{dataItem.hasMore?'加载中...':'已全部加载完毕'}}</view>
+      </scroll-view>
+    </swiper-item>
+  </block>
+</swiper>

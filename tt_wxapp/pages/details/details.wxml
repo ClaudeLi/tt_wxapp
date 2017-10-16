@@ -1,0 +1,72 @@
+<!--details.wxml-->
+<import src="commentCell.wxml" />
+<import src="relatedCell.wxml" />
+
+<view class="mainView">
+  <view class="tt_player_view">
+    <video id="tt-player" class="tt_player_video {{tt_mirror_status?'tt_mirror':''}}" src="{{currentItem.file}}" bindended="playEndHandle" loop="{{tt_loop_status}}" autoplay="true" bindplay="bindplayHandle" controls></video>
+    <view class="tt_player_control_bar">
+      <view class="tt_player_loop" bindtap="tap_player_loop">{{tt_loop_status?'单节循环':'顺序播放'}}</view>
+      <view class="tt_player_mirror" bindtap="tap_player_mirror">{{tt_mirror_status?'已镜像':'未镜像'}}</view>
+      <view class="tt_player_speed" bindtap="tap_player_speed">{{tt_speed_status+'X'}}</view>
+    </view>
+  </view>
+  <scroll-view class="tt_detail_content_scroll" scroll-y bindscrolltolower="addComment" enable-back-to-top="true">
+    <!-- UP主信息&课程简介 -->
+    <view class="tt_detail_top_view">
+      <view class="tt_detail_user_name">
+        <text>{{user_items.nicheng}}</text>
+      </view>
+      <view class="tt_detail_description">
+        <text>{{data.description}}</text>
+      </view>
+    </view>
+
+    <!-- 课程播放列表 -->
+    <view class="tt_videoList_superView">
+      <scroll-view class="tt_videoList_scrollView" scroll-x="true">
+        <block wx:for="{{video_items}}" wx:key="TTVideoItemCell">
+          <view id="tt_videoList_item_{{index}}" class="tt_videoList_item {{index==playIndex?'playingItem':'upPlayItem'}}" bindtap="tapVideoItem" id="{{index}}">
+            <view class="tt_videoList_title">{{item.title}}</view>
+          </view>
+        </block>
+      </scroll-view>
+    </view>
+
+    <!-- 分隔条 -->
+    <view class="tt_lineView" hidden="{{related_school.length>0?false:true}}"></view>
+
+    <!-- 相关课程 -->
+    <view class="tt_detail_related_view" hidden="{{related_school.length>0?false:true}}">
+      <view class="tt_detail_module_title_view">
+        <text class="tt_detail_module_title">相关课程</text>
+      </view>
+      <block wx:for="{{related_school}}" wx:for-item="item" wx:key="tt_related_school_item">
+        <template is="relatedCell" data="{{item}}" />
+      </block>
+    </view>
+
+    <!-- 分隔条 -->
+    <view class="tt_lineView"></view>
+
+    <!-- 评论 -->
+    <view class="tt_comment_view">
+      <view class="tt_detail_module_title_view">
+        <text class="tt_detail_module_title">{{'评论('+(data.comment_count)+')'}}</text>
+        <text class="tt_write_comment" bindtap="writeComment">写评论</text>
+      </view>
+      <block wx:for="{{hot_comment}}" wx:for-item="item" wx:for-index="index" wx:key="tt_hot_comment_cell">
+        <template is="commentCell" data="{{item, index, type:0}}" />
+      </block>
+      <block wx:for="{{all_comment}}" wx:for-item="item" wx:for-index="index" wx:key="tt_all_comment_cell">
+        <template is="commentCell" data="{{item, index, type:1}}" />
+      </block>
+      <view class="tt_noMore_view">{{isHasMore?'加载中...':'已全部加载完毕'}}</view>
+    </view>
+  </scroll-view>
+
+  <!-- 评论输入框 -->
+  <view class="tt_inputBar {{input_status?'startInput':'endInput'}}" hidden="{{!input_status}}">
+    <input class="tt_input_View" placeholder="写评论" bindblur="bindblurHandle" focus="{{input_status}}" />
+  </view>
+</view>

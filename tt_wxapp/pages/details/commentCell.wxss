@@ -1,0 +1,82 @@
+/* 评论 */
+
+.commentCell {
+  position: relative;
+  border-bottom: 1rpx solid #f2f2f2;
+}
+
+.comment_style_title_view {
+  position: absolute;
+  top: -22px;
+  left: 0;
+  right: 0;
+  height: 20px;
+  text-align: center;
+  width: 70px;
+  line-height: 20px;
+  font-size: 12px;
+  overflow: auto;
+  margin: auto;
+  background-color: white;
+}
+
+.comment_content {
+  margin-bottom: 12px;
+  margin-top: 12px;
+  margin-left: 26rpx;
+  margin-right: 26rpx;
+}
+
+.comment_user_face {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 30rpx;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.comment_name_time {
+  flex-direction: column;
+  display: inline-block;
+  margin-left: 14rpx;
+  vertical-align: middle;
+  padding: 0;
+  color: #454545;
+}
+
+.comment_name {
+  display: block;
+  font-size: 24rpx;
+  margin-bottom: 10rpx;
+}
+
+.comment_time {
+  display: block;
+  font-size: 16rpx;
+}
+
+.comment_like_bar {
+  float: right;
+}
+
+.comment_like_img {
+  width: 50rpx;
+  height: 50rpx;
+  margin-bottom: 25rpx;
+  vertical-align: middle;
+}
+
+.comment_like_count {
+  height: 60rpx;
+  color: #888;
+  font-size: 30rpx;
+  line-height: 60rpx;
+  margin-bottom: 15rpx;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.comment_text {
+  margin-top: 20rpx;
+  font-size: 28rpx;
+}

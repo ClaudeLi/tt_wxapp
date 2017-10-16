@@ -1,0 +1,32 @@
+<!-- 评论cell -->
+<!-- 需要三个参数
+  1.item  : 评论信息 对象{}
+  2.index : 数组下标, 列表中的第几条评论
+  3.type  : 评论类型 0/1,  0:最热评论; 1:全部评论 
+ -->
+<template name="commentCell">
+  <view class="commentCell">
+    <view class="comment_style_title_view" wx:if="{{index==0}}">
+      <text class="comment_style_title">{{type==0?'  最热评论  ':'  全部评论  '}}</text>
+    </view> 
+    <view class="comment_content">
+      <!-- 顶部内容 -->
+      <view class="comment_top_bar">
+        <!-- 头像 -->
+        <image class="comment_user_face" src="{{item.user_items.face}}" mode="aspectFill"></image>
+        <!-- 昵称和时间 -->
+        <view class="comment_name_time">
+          <view class="comment_name">{{item.user_items.nicheng}}</view>
+          <view class="comment_time">{{item.comment.inserttime}}</view>
+        </view>
+        <!-- 评论赞 -->
+        <view class="comment_like_bar" bindtap="tapCommentLike" id="{{index}}" data-type="{{type}}" data-item="{{item}}">
+          <image class="comment_like_img" src="{{item.comment.like_status == 1?'../../images/others/icon_liked@2x.png':'../../images/others/icon_unLike@2x.png'}}" mode="aspectFit"></image>
+          <text class="comment_like_count">{{item.comment.like_count}}</text>
+        </view>
+      </view>
+      <!-- 评论内容 -->
+      <view class="comment_text">{{item.comment.details}}</view>
+    </view>
+  </view>
+</template>

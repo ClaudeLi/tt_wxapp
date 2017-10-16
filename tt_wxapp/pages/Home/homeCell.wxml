@@ -1,0 +1,13 @@
+<template name="homeCell">
+    <view class="tt_home_cell_view">
+      <!-- navigator 页面链接 控制跳转 -->
+      <!-- 也可以通过给 tt_home_cell_view 添加点击事件 -->
+      <!-- bindtap="tapCell" id="{{item.items.id}}" data-type="{{item.type}}" -->
+      <navigator url="../../pages/details/details?id={{item.items.id}}&type={{item.type}}" open-type="navigate" hover-class="navigator-hover">
+        <view class="tt_home_cell_content">
+          <image class="tt_home_cell_image" src="{{item.items.cover}}" mode="aspectFill"></image>
+          <view class="tt_home_cell_text">{{item.items.title}}</view>
+        </view>
+      </navigator>
+    </view>
+</template>

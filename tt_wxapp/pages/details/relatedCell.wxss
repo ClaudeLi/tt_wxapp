@@ -1,0 +1,58 @@
+.tt_related_cell {
+  position: relative;
+  width: 100%;
+  height: 150rpx;
+  border-bottom: 1rpx solid #f2f2f2;
+}
+
+.tt_related_contentView {
+  position: absolute;
+  display: inline-block;
+  top: 10rpx;
+  left: 26rpx;
+  right: 26rpx;
+  bottom: 10rpx;
+}
+
+.tt_related_cover {
+  position: relative;
+  height: 100%;
+  width: 230rpx;
+  border-radius: 4rpx;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.tt_related_right_view {
+  position: absolute;
+  flex-direction: column;
+  display: inline-block;
+  left: 240rpx;
+  right: 0;
+  height: 100%;
+  vertical-align: middle;
+  color: #454545;
+}
+
+.tt_related_title {
+  position: relative;
+  display: block;
+  font-size: 28rpx;
+  margin-top: 10rpx;
+  white-space: pre-wrap;
+}
+
+.tt_related_name {
+  position: absolute;
+  display: block;
+  font-size: 22rpx;
+  bottom: 10rpx;
+}
+
+.tt_related_hitView {
+  position: absolute;
+  display: block;
+  font-size: 22rpx;
+  bottom: 10rpx;
+  right: 0;
+}

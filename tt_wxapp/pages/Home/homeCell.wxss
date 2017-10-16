@@ -1,0 +1,43 @@
+/** 修改默认的navigator点击态 **/
+
+/* .navigator-hover {
+    color:#FFDC10;
+} */
+
+/** 自定义其他点击态样式类 **/
+
+.other-navigator-hover {
+  color: red;
+}
+
+.tt_home_cell_view {
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  background: white;
+  border-radius: 4px;
+}
+
+.tt_home_cell_content {
+  width: 100%;
+  height: 330rpx;
+  position: relative;
+}
+
+.tt_home_cell_image {
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+}
+
+.tt_home_cell_text {
+  position: absolute;
+  font-size: 28rpx;
+  bottom: 10rpx;
+  left: 10rpx;
+  right: 10rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

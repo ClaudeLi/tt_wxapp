@@ -1,0 +1,14 @@
+<template name="relatedCell">
+  <navigator url="../../pages/details/details?id={{item.id}}" open-type="redirect" hover-class="other-navigator-hover">
+    <view class="tt_related_cell">
+      <view class="tt_related_contentView">
+        <image class="tt_related_cover" src="{{item.cover}}" mode="aspectFill"></image> 
+        <view class="tt_related_right_view">
+          <view class="tt_related_title">{{item.title}}</view> 
+          <view class="tt_related_name">{{item.user_items.nicheng}}</view>
+          <view class="tt_related_hitView">{{item.hit_count}}</view>
+        </view>
+      </view>
+    </view>
+  </navigator>
+</template>

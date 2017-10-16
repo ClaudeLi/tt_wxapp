@@ -1,0 +1,72 @@
+/* homePage.wxss */
+@import "homeCell.wxss";
+
+.mainView {
+  width: 100%;
+  height: 100%;
+}
+
+.tt_home_title_bar {
+  position: fixed;
+  top: 0;
+  height: 37px;
+  left: 0rpx;
+  right: 0rpx;
+  white-space: nowrap;
+  border-top: 1px solid #dddcdc;
+  color: #7b7b7b;
+  text-align: center;
+  background-color: #f7f7f7;
+  justify-content: space-around;
+  align-items: stretch;
+  z-index: 9999;
+}
+
+.tt_home_title_bar ::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+.tt_home_title_item {
+  display: inline-block;
+  margin-left: 10px;
+  margin-right: 10px;
+  line-height: 35px;
+  height: 35px;
+  flex-grow: 1;
+  font-size: 14px;
+  text-align: center;
+}
+
+.selected {
+  border-bottom: 2px solid red;
+  color: red;
+  font-size: 15px;
+  text-align: center;
+}
+
+.swiper {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  margin: 0;
+  border: 0;
+  margin-top: 37px;
+  background-color: #eaeaea;
+}
+
+.tt_home_scroll_item {
+  margin: 0;
+  height: 100%;
+  background-color: #eaeaea;
+}
+
+.tt_noMore_view {
+  width: 100%;
+  height: 55rpx;
+  text-align: center;
+  font-size: 26rpx;
+  color: #454545;
+  line-height: 50rpx;
+}
