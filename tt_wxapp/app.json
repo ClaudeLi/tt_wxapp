@@ -3,7 +3,8 @@
     "pages/Home/homePage",
     "pages/index/index",
     "pages/logs/logs",
-    "pages/details/details"
+    "pages/details/details",
+    "pages/Wan/wan"
   ],
   "tabBar": {
     "color": "#9698a9",
@@ -14,6 +15,12 @@
         "text": "首页",
         "iconPath": "images/tabBar/tabBar_home@2x.png",
         "selectedIconPath": "images/tabBar/tabBar_homeSelectd@2x.png"
+      },
+      {
+        "pagePath": "pages/Wan/wan",
+        "text": "玩",
+        "iconPath": "images/tabBar/tabBar_mine@2x.png",
+        "selectedIconPath": "images/tabBar/tabBar_mineSelectd@2x.png"
       },
       {
         "pagePath": "pages/index/index",
